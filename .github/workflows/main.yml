@@ -1,0 +1,48 @@
+on: 
+  push:
+    branches:
+      - 'main'
+name: Deploy
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: '/home/ftpuser/ftp/spero_platform_front/prod/'
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2
+
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.ftp_host }}
+        username: ${{ secrets.ftp_user }}
+        password: ${{ secrets.ftp_pass }}
+        server-dir: /home/ftpuser/ftp/spero_platform_front/prod/
+
+    - name: Remote commands
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.ssh_host }}
+        username: ${{ secrets.ssh_user }}
+        password: ${{ secrets.ssh_pass }}
+        port: 22
+        script: |
+          cd /home/ftpuser/ftp/spero_platform_front/prod
+          export NVM_DIR="$HOME/.nvm" 
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          nvm install 14
+          nvm use 14
+          yarn
+          yarn build
+
+          /root/.nvm/versions/node/v16.13.0/bin/pm2 start ./pm2/main.json
+
+    

@@ -1,0 +1,19 @@
+{
+    "apps": [
+      {
+        "name": "SperoClinicFront:8001",
+        "script": "serve",
+        "log_date_format": "YYYY-MM-DD",
+        "exec_mode": "fork_mode",
+        "env": {
+            "PM2_SERVE_PATH": "./build/",
+            "PM2_SERVE_PORT": "8002",
+            "PM2_SERVE_SPA": true,
+            "PM2_SERVE_HOMEPAGE": "/index.html",
+            "SKIP_PREFLIGHT_CHECK":true,
+            "REACT_APP_BASENAME": "",
+            "REACT_APP_API_URL":"http://clinic.speroprev.com/api"
+        }
+      }
+    ]
+  }

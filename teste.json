@@ -1,0 +1,79 @@
+{
+  "patient": {
+    "nip": 1,
+    "name": "Guilherme Carvalho Silva",
+    "mother_name": "Sirley Carvalho Gonçalves Silva",
+    "email": "guigaboy23000@gmail.com",
+    "cpf": "600.738.590-60",
+    "phone": "(51) 98612-7959",
+    "address": "Rua jari, 671",
+    "cep": "91.350-170",
+    "health_plan": {"name": "Unimed", "number": "19103321"},
+    "birth_day": "2001-11-23T02:00:00.000Z",
+    "weight": {"value": 76, "mesure": "kg"},
+    "height": {"value": 1.75, "mesure": "m"},
+    "patology": "Nenhuma",
+    "gender": "Masculino",
+    "alergy": "",
+    "obs": "v0"
+  },
+  "prescription": {
+    "immunohistochemistry": "123",
+    "tnm_staging": "123",
+    "clinic_state": "231",
+    "cid": "123",
+    "therapeutic_plan": "123",
+    "treatment": "123",
+    "cicle": "123"
+  },
+  "requisites": [
+    {
+      "type": "drug",
+      "title": "Oxaliplatina",
+      "id": "624718d1e6978309f07efaea",
+      "quantity": 1,
+      "day": 1,
+      "infusion": {"time": null, "type": "EV/IV"},
+      "concentration": {"value": 100, "mesure": "mg/m²"},
+      "group": "Quimioterápicos"
+    },
+    {
+      "type": "drug",
+      "title": "Folinato de cálcio",
+      "id": "62471953e6978309f07efaef",
+      "quantity": 1,
+      "day": 1,
+      "infusion": {"time": null, "type": "EV/IV"},
+      "concentration": {"value": 400, "mesure": "mg/m²"},
+      "group": "Antimetabólicos"
+    },
+    {
+      "type": "drug",
+      "title": "Fluoruracila",
+      "id": "624719ebe6978309f07efaf2",
+      "quantity": 1,
+      "day": 1,
+      "infusion": {"time": null, "type": "EV/IV"},
+      "concentration": {"value": 400, "mesure": "mg/m²"},
+      "group": "Antimetabólicos"
+    },
+    {
+      "type": "drug",
+      "title": "Fluoruracila",
+      "id": "624719ebe6978309f07efaf2",
+      "quantity": 1,
+      "day": 2,
+      "infusion": {"time": null, "type": "EV/IV"},
+      "concentration": {"value": 2400, "mesure": "mg/m²"},
+      "group": "Antimetabólicos"
+    },
+    {
+      "type": "material",
+      "title": "Agulha 500x300 mm Descartável",
+      "quantity": 3,
+      "category": "Agulhas",
+      "id": "62471a15e6978309f07efaf7"
+    }
+  ],
+  "protocol": {"name": "FOLFOX 6", "id": "62471cace6978309f07efaf8"}
+}

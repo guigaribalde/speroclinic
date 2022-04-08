@@ -1,0 +1,315 @@
+@import './base/bootstrap.scss';
+@import './base/bootstrap-extended.scss';
+@import './base/colors.scss';
+@import './base/components.scss';
+
+// Themes
+@import './base/themes/dark-layout.scss';
+@import './base/themes/bordered-layout.scss';
+@import './base/themes/semi-dark-layout.scss';
+// @import './base/custom-rtl.scss';
+
+// React Specific
+@import 'react/index';
+
+.react-dataTable {
+  border-radius: 0;
+  .rdt_TableHead {
+    .rdt_TableHeadRow {
+      background-color: $table-head-bg;
+      border-top: 1px solid;
+      border-color: $border-color;
+      min-height: 0;
+      height: 38px;
+
+      .rdt_TableCol {
+        padding: 0.72rem 1.5rem;
+        .rdt_TableCol_Sortable {
+          color: $body-color;
+          font-weight: bold;
+          font-style: 0.857rem;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          &:hover {
+            opacity: 1;
+          }
+          span {
+            margin-left: 0.35rem;
+          }
+        }
+        &:first-child {
+          .form-check {
+            transform: translateX(-10px);
+          }
+        }
+      }
+    }
+  }
+
+  .rdt_TableBody {
+    .rdt_TableRow {
+      color: $body-color;
+      .rdt_TableCell {
+        height: 53px;
+        padding: 0.72rem 1.5rem;
+
+        .column-action {
+          svg {
+            stroke: $body-color;
+          }
+
+          .dropdown-item:hover {
+            svg {
+              stroke: $primary;
+            }
+          }
+
+          .dropdown-item:active {
+            svg {
+              stroke: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .react-paginate {
+    &.separated-pagination {
+      .page-item:first-child .page-link,
+      .page-item:last-child .page-link {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &.roles-table {
+    .rdt_TableHead .rdt_TableHeadRow .rdt_TableCol:first-child .form-check {
+      transform: translateX(0);
+    }
+    .rdt_TableBody .rdt_TableRow .rdt_TableCell:first-child .form-check {
+      transform: translateX(10px);
+    }
+  }
+}
+
+.dark-layout {
+  .app-user-list {
+    header {
+      background-color: $theme-dark-card-bg;
+    }
+  }
+
+  .react-dataTable {
+    .jeqOAT {
+      background-color: $theme-dark-card-bg;
+    }
+    .hlidmt {
+      background-color: $theme-dark-card-bg;
+    }
+    .khKjDK {
+      background-color: $theme-dark-card-bg;
+      color: $theme-dark-body-color;
+    }
+
+    .rdt_Table {
+      background: $theme-dark-table-header-bg;
+      color: $theme-dark-body-color;
+
+      & > div:first-child:not(.rdt_TableHead):not(.rdt_TableBody) {
+        color: $theme-dark-body-color;
+        background-color: $theme-dark-card-bg;
+      }
+    }
+    .rdt_TableHead {
+      .rdt_TableHeadRow {
+        background-color: $theme-dark-table-header-bg !important;
+        border-color: $theme-dark-border-color;
+        .rdt_TableCol {
+          color: $theme-dark-body-color;
+          div[role='button'] {
+            color: $theme-dark-body-color;
+          }
+        }
+        .rdt_TableCol_Sortable {
+          color: $theme-dark-headings-color;
+
+          svg {
+            stroke: $theme-dark-headings-color;
+          }
+        }
+      }
+    }
+    .rdt_TableBody {
+      .expandable-content {
+        background-color: $theme-dark-table-bg;
+        color: $theme-dark-body-color;
+      }
+      .rdt_TableRow {
+        background-color: $theme-dark-table-bg;
+        color: $theme-dark-body-color;
+        border-color: $theme-dark-border-color;
+        .rdt_TableCell {
+          color: $theme-dark-body-color;
+          .column-action {
+            svg {
+              stroke: $theme-dark-body-color;
+            }
+          }
+        }
+        button {
+          &:hover:not(:disabled) {
+            background-color: $theme-dark-body-bg;
+          }
+          svg {
+            color: $theme-dark-body-color;
+          }
+        }
+        .permissions-actions {
+          button:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .rdt_Pagination {
+      color: $theme-dark-body-color;
+      border-color: $theme-dark-border-color;
+      background-color: $theme-dark-table-bg;
+
+      svg {
+        fill: $theme-dark-body-color;
+      }
+    }
+  }
+
+  .rdt_Pagination {
+    color: $theme-dark-body-color;
+    background-color: $theme-dark-card-bg;
+    button {
+      svg {
+        fill: $theme-dark-body-color;
+      }
+      &[disabled] svg {
+        fill: $theme-dark-text-muted-color;
+      }
+    }
+  }
+}
+
+.brand-text {
+  height: 35.8594px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+#search-input {
+  max-width: 200px;
+}
+.react-dataTable {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  margin-top: 10px;
+}
+.rdt_TableHeadRow {
+  background-color: #f3f2f7 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.float-right {
+  justify-content: end;
+  width: 100%;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.primary-color {
+  color: $primary;
+}
+.secondary-color {
+  color: $gray-600;
+}
+.link {
+  color: $body-color;
+  &:hover {
+    color: $body-color;
+  }
+}
+#column-actions {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+body > iframe[style*='2147483647']:not([id='webpack-dev-server-client-overlay']) {
+  display: none;
+}
+.before.input-group-text {
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+.after.input-group-text {
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+}
+.error {
+  color: $red;
+  font-size: 0.857rem;
+}
+.before.is-invalid {
+  border-color: $red !important;
+}
+.after.is-invalid {
+  border-color: $red !important;
+}
+.react-select {
+  font-size: 14px;
+}
+.before-input {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.after-input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.autocomplete-container {
+  flex-grow: 1;
+}
+
+.label-bg {
+  background-color: white;
+}
+.bg-body {
+  background-color: $body-bg;
+}
+.dark-layout {
+  .bg-body {
+    background-color: #151d32;
+  }
+  .label-bg {
+    background-color: $theme-dark-card-bg;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90, 1);
+    border-radius: 50px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+.page-item.active {
+  height: 28px;
+}
+.opacity-hover:hover {
+  transition: opacity ease-in-out 0.1s;
+}
+.opacity-hover:hover {
+  opacity: 0.5;
+}
